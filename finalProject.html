@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB-115 Final Project</title>
+        <link rel="stylesheet" href="JavaProject.css">
+    </head>
+    <body>
+        <h1 id="heading">Build Your Own Resume!</h1>
+
+        <form id="form1">
+            <p id="p1">
+                <label for="userName">Name: </label>
+                <input type="text" onfocus="this.value=''" name="userName" size="50" value="Enter Your Name">
+
+                <br>
+
+                <label for="userAddress">Address: </label>
+                <input type="text" name="userAddress" onfocus="this.value=''" size="50" value="Enter Your Address">
+
+                <br>
+
+                <label for="userNumber">Phone Number: </label>
+                <input type="text" name="userNumber" onfocus="this.value=''" size="50" value="Enter Your Phone Number">
+
+                <br>
+
+                <label for="userEmail">Email Address: </label>
+                <input type="text" name="userEmail" onfocus="this.value=''" size="50" value="Enter Your Full Correct  Email Address">
+
+                <br>
+
+                <label for="userTwitter">Twitter Handle: </label>
+                <input type="text" name="userTwitter" onfocus="this.value=''" size="50" value="Enter Your Twitter Handle">
+
+                <br>
+
+                <label for="userLinkedIN">LinkedIn: </label>
+                <input type="text" name="userLinkedIN" onfocus="this.value=''" size="50" value="Enter Your LinkedIn">
+
+                <br> 
+
+                <label for="userGit">GitHub: </label>
+                <input type="text" name="userGit" onfocus="this.value=''" size="50" value="Enter Your GitHub">
+                
+            </p>
+
+            <p id="p2">
+                <textarea cols="75" rows="5" onfocus="this.value=''" name="userPersonal">Enter Your coding skills/Languagues Known</textarea>
+
+                <br>
+
+                <textarea cols="75" rows="5" onfocus="this.value=''" name="userCareerObj">Enter Your Career Objectives</textarea>
+
+                <br>
+
+                <textarea cols="75" rows="5" onfocus="this.value=''" name="userEducation">Enter Your Education Background</textarea>
+            </p>
+
+            <br>
+
+            <p id="p3">
+                <h2>Previous Employment Experience</h2>
+                Please describe all previous employment experiences starting with the most recent.
+                <br>
+                <br>
+                If still currently employed, leave the date blank for said employement experience.
+                <br>
+                <br>
+                <u><b>If the start date is blank the entry will not be added</b></u>
+                <br>
+                <br>
+            </p>
+
+            <p id="p4">
+                <label for="userEmployment">About Your Recent Job:</label>
+                <textarea cols="75" rows="5" name="userEmployment" id="userEmployment"></textarea>
+                <br>
+                <label for="startDate">Start Date: </label>
+                <input type="date" name="startDate">
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate">
+                <br>
+                <br>
+
+                <label for="userEmployment">About Another Job:</label>
+                <textarea cols="75" rows="5" name="userEmployment" id="userEmployment"></textarea>
+                <br>
+                <label for="startDate">Start Date: </label>
+                <input type="date" name="startDate">
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate">
+                <br>
+                <br>
+
+                <label for="userEmployment">About One Last Job:</label>
+                <textarea cols="75" rows="5" name="userEmployment" id="userEmployment"></textarea>
+                <br>
+                <label for="startDate">Start Date: </label>
+                <input type="date" name="startDate">
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate">
+                <br>
+                <br>
+            </p>
+            <p id="p5">
+                <textarea cols="75" rows="5" name="userRef">Enter Your References</textarea>
+            </p>
+            <div id="Sendbutton">
+                <input type="button" name="btnCreate" value="Create Resume">
+            </div>
+        </form>
+        
+        <script src="JavaProject.js">
+
+        </script>
+    </body>
+</html>
