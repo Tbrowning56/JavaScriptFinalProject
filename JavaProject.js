@@ -1,14 +1,19 @@
 
+// creating a form with the id from the HTML file linked to this javascript project
 var createForm = document.getElementById('form1');
 createForm.btnCreate.addEventListener("click", createResume);
 
-
+// creates the resume window if the email enter is valid
 function createResume(){
     if(!validEmail()){
         alert("Please enter a valid email address!")
         return;
     }
+    
+    // creating the window that 550 by 850 in dimension called doc
     var doc = createWindow(550, 850).document;
+    
+    // writing the HTML head and body
 
     doc.write("<html");
     doc.write("<head>");
@@ -23,6 +28,8 @@ function createResume(){
 
 }
 
+// function to validate the email address entered, if the location of the @ is less than 1 the email is false
+// i.e @gmail.com is false t@gmail.com is valid
 function validEmail(){
     var email = document.getElementById('form1').userEmail.value;
     var valid = true;
@@ -33,13 +40,15 @@ function validEmail(){
     return valid;
 
 }
+// function to create the window, the height and width are being sent from line 13
 function createWindow(height, width){
     var size = "height= "+ height + ", width= " + width;
     return window.open("", "", size);
 
 }
 
-
+// function to write the head of the document created named doc
+// styleStr is the style of the document created named doc
 function writeHead(doc){
     var fontSize = 12;
     var fontType = "Lucida handwriting, Monaco, monospace";
@@ -86,8 +95,11 @@ function writeHead(doc){
 
     styleStr += "</style>";
     
+    // styleStr is written to doc
+    
     doc.write(styleStr);
-
+    
+    // taking in information from the user and writing it to the doc created
     var form = document.getElementById("form1");
     var name = form.userName.value;
     doc.write("<h3 id=\"name\">" +name.toUpperCase() + "</h3>");
@@ -111,6 +123,7 @@ function writeHead(doc){
 
 }
 
+// writing the body to the doc
 function writeBody(doc){
     var form = document.getElementById("form1");
 
@@ -127,6 +140,7 @@ function writeBody(doc){
 
 }
 
+// formats the page the left/right placement of text
 function writeSection(doc, left, right){
     doc.write("<div id=\"left\">" + left + "</div>");
     doc.write("<div id=\"right\">" + right + "</div>");
@@ -134,6 +148,7 @@ function writeSection(doc, left, right){
 
 }
 
+// writing the employment to the doc
 function writeEmployment(doc){
     var previousJobs = document.getElementsByName("userEmployment");
     var startDates = document.getElementsByName("startDate");
@@ -147,6 +162,7 @@ function writeEmployment(doc){
     }
 }
 
+// a function to get the date of employment history and change it from dd/mm/yyy to Month Year - Month Year
 function getDate(start, end){
     var month = start.charAt(5) + start.charAt(6);
     var year = start.substr(0,4);
@@ -160,6 +176,8 @@ function getDate(start, end){
     return Stringdate;
 }
 
+// a function to help getDate, has an Array of months starting in January and whenever a month is returned one month is subtracted
+// due to Arrays starting at 0
 function getMonth(month){
     if (month.length > 0 && (month >= 1 && month <=12)){
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
